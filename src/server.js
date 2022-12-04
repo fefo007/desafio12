@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(session({
     store: MongoStore.create({
-        mongoUrl: 'mongodb+srv://fracaroFederico:fracaroFederico@cluster0.viv6icy.mongodb.net/?retryWrites=true&w=majority',
+        mongoUrl: 'mongodb+srv://fracaroFederico:fracaroFederico@cluster0.viv6icy.mongodb.net/sessions?retryWrites=true&w=majority',
         mongoOptions: advancedOptions
     }),
     secret: 'shhhhhhhhhhhhhhhhhhhhh',
@@ -42,9 +42,9 @@ app.post('/login',(req,res)=>{
     req.session.nombre = nombre
     res.redirect('/produc')
 })
-app.get('/produc', (req, res) => {
+app.get('/produc',(req, res) => {
     let completeList=api.getAll()
-    let user=JSON.stringify(req.session.nombre)
+    let user = req.session.nombre
     res.render("form",{completeList,user})
 })
 app.post('/produc',(req,res)=>{

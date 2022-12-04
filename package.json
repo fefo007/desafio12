@@ -5,12 +5,12 @@
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
     "handlebars": "^4.7.7",
-    "mongodb": "^4.12.1"
+    "mongodb": "^4.12.1",
+    "sweetalert": "^2.1.2"
   },
   "name": "entrega12",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
